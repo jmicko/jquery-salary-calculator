@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="client.js"></script>
 </head>
+
 <body>
-    <header>
-
-    </header>
-    <main>
-
-    </main>
+    <div class="container">
+        <header>
+            <h1>FILECORP PAYCHECK SIMULATOR</h1>
+        </header>
+        <main>
+            <h2>Add Employee</h2>
+            <form>
+                <input type="text" placeholder="First Name" id="in-first-name">
+                <input type="text" placeholder="Last Name" id="in-last-name">
+                <input type="text" placeholder="ID" id="in-id">
+                <input type="text" placeholder="Title" id="in-title">
+                <input type="text" placeholder="Annual Salary" id="in-annual-salary">
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+            <h2>Employees</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th id="delete-header"><!-- Left blank intentionally --></th>
+                    </tr>
+                </thead>
+                <tbody class="employee-list">
+                    <!-- left blank -->
+                </tbody>
+            </table>
+        </main>
+    </div>
 </body>
+
 </html>

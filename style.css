@@ -1,3 +1,47 @@
-body{
-    background-color: aquamarine;
+body {
+    background-color: rgb(199, 199, 177);
+    font-family: 'Syne Mono', monospace;
+}
+
+.container {
+    width: fit-content;
+    margin: auto;
+}
+
+table {
+    border: black 2px solid;
+    /* margin: 0; */
+    border-collapse: collapse;
+}
+
+thead {
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+
+th {
+    border: black 2px solid;
+    border-collapse: collapse;
+    padding: 50px auto;
+    font-size: 1.2em;
+    width: 16%;
+}
+
+tr {
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+
+td {
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+
+#delete-header {
+    width: 10%;
+    background-color: rgb(58, 184, 65);
+}
+
+#monthly-total {
+    float: right;
 }
