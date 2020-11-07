@@ -11,10 +11,10 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 (View Raw will give you the markdown that you can copy to your repos!)
 
 
-![MIT LICENSE](https://img.shields.io/github/license/scottbromander/the_marketplace.svg?style=flat-square)
-![REPO SIZE](https://img.shields.io/github/repo-size/jmicko/jquery-salary-calculator.svg?style=flat-square)
-![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
-![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
+[![LICENSE](https://img.shields.io/github/license/jmicko/jquery-salary-calculator?style=flat-square)](./LICENSE.txt)
+![REPO SIZE](https://img.shields.io/github/repo-size/jmicko/jquery-salary-calculator?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/jmicko/jquery-salary-calculator?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/jmicko/jquery-salary-calculator?style=social)
 
 # jQuery Monthly Salary calculator
 
