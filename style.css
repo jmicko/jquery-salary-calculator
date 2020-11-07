@@ -44,22 +44,64 @@ tr:nth-child(2n){
 }
 
 #delete-header {
-    width: 10%;
+    width: 12%;
     background-color: rgb(34, 36, 29);
+}
+
+.delete-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.delete-button {
+    background-color: rgb(236, 65, 65);
+    font: inherit;
+    box-shadow: inset 2px 2px rgba(255, 255, 255, .6),
+                inset -2px -2px rgba(0, 0, 0, .6);
+}
+.delete-button:hover{
+    background-color: lightcoral;
+}
+
+.submit-button {
+    background-color: rgb(109, 145, 108);
+    font: inherit;
+    box-shadow: inset 2px 2px rgba(255, 255, 255, .6),
+                inset -2px -2px rgba(0, 0, 0, .6);
+}
+.submit-button:hover{
+    background-color: rgb(156, 180, 155);
+}
+
+.submit-button:focus{
+    /* remove annoying rounded blue outline when button is focused */
+    outline: none;
+    /* change color when focused to resolve accesibility concerns */
+    background-color: rgba(128, 177, 159, 0.596);
+}
+
+button:active {
+    box-shadow: inset -2px -2px rgba(255, 255, 255, .6),
+                inset 2px 2px rgba(0, 0, 0, .6);
+}
+
+.delete-button:focus{
+    /* remove annoying rounded blue outline when button is focused */
+    outline: none;
+    /* change color when focused to resolve accesibility concerns */
+    background-color: rgba(184, 113, 140, 0.507);
 }
 
 #monthly-total {
     float: right;
-}
+}    
 
-.delete-button {
-    align-items: center;
-}
-
-.shadow {
-    box-shadow: rgba(169, 169, 169, 0.616) 4px 6px 2px;
+table {
+    box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
 }
 
 input {
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(209, 192, 192);
 }

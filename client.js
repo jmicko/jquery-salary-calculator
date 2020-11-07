@@ -5,7 +5,7 @@ let totalMonthly = 0
 
 function readyNow() {
     console.log('jQuery connected');
-    $('#submit-button').on('click', submitEmployee);
+    $('.submit-button').on('click', submitEmployee);
     $('main').append(`<h2 id='monthly-total'>Total Monthly: $${totalMonthly}</h2>`)
 
 }
@@ -29,12 +29,12 @@ function submitEmployee(event) {
         <td>${employee.id}</td>
         <td>${employee.title}</td>
         <td>$${employee.salary}</td>
-        <td><button class='delete-button'>Terminate</button></td>
+        <td class='delete-cell'><button class='delete-button'>Terminate</button></td>
     </tr>`
     );
     // change the salary string to a number so we can just add it to the total
     let salaryNum = Number(employee.salary.replace(',', ''));
     totalMonthly += salaryNum;
-    $('#monthly-total').text(`Total Monthly: $${totalMonthly}`)
+    $('#monthly-total').text(`Total Monthly: $${totalMonthly}`);
     console.log(salaryNum, employee.salary);
 }
