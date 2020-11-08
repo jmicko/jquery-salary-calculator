@@ -66,11 +66,7 @@ function submitEmployee(event) {
         // show new monthly total
         updateTotal();
         // remove all values from input fields
-        $('#in-first-name').val(''),
-        $('#in-last-name').val(''),
-        $('#in-id').val(''),
-        $('#in-title').val(''),
-        $('#in-annual-salary').val('')
+        $('.employee-data').val('');
     }
 }
 
@@ -85,7 +81,6 @@ function fieldsFull(employee) {
         }
     }
     $('.submit').fadeOut(100);
-
     return true;
 }
 
