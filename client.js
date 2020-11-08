@@ -1,5 +1,3 @@
-console.log('ready');
-
 $(document).ready(readyNow);
 let totalAnnual = 0
 
@@ -7,8 +5,6 @@ let totalAnnual = 0
 function readyNow() {
     // listener for submitting data from form
     $('.submit-button').on('click', submitEmployee);
-    // print the monthly total on the page
-    printTotal()
     // add listeners to delete buttons
     $('.employee-list').on('click', '.delete-cell', deleteEmployee);
     // add listener to expand button
@@ -16,24 +12,17 @@ function readyNow() {
 }
 
 // toggles the buttons to show/hide, as well as the welcome letter
-function hideIntro(){
+function hideIntro() {
     $('#intro').toggleClass('hide');
     // used two different button instead of changing the text on the button every time
     $('#welcome-dot').toggleClass('hide');
     $('#welcome').toggleClass('hide');
 }
 
-function printTotal() {
-    // shows the total at the bottom of the page, which at this point is 0
-    $('main').append(`<h2 class='shadow monthly-total'>Total Monthly: $${totalAnnual/12}</h2>`);
-}
-
-
 // take input from text boxes and add them to the table in the DOM
 function submitEmployee(event) {
     // don't refresh page on submit
     event.preventDefault();
-
     // grab values from all input boxes and store them in an employee object
     let employee = {
         firstName: $('#in-first-name').val(),
@@ -46,7 +35,6 @@ function submitEmployee(event) {
     // as it can make for bad calculations in js
     // used single & here so any error flags will update if they have been fixed
     if (fieldsFull(employee) & noDecimals(employee)) {
-        console.log('there is an employee', employee);
         // add a row to the table with the new employee information and a delete button
         $('.employee-list').append(
             `<tr>
@@ -75,8 +63,7 @@ function fieldsFull(employee) {
     // loop through employee object
     for (const val in employee) {
         if (!employee[val]) {
-            console.log(`it's false`, employee[val]);
-            flagError();
+            $('.submit').fadeIn(100);
             return false;
         }
     }
@@ -89,22 +76,12 @@ function noDecimals(employee) {
     // look for postition of period. If none, will return -1
     if (employee.salary.indexOf('.') !== -1) {
         // pull up flag to alert user of problem
-        flagDecimals();
+        $('.decimal').fadeIn(100);
         return false;
     }
     // if no problem, make sure to remove flag
     $('.decimal').fadeOut(100);
     return true;
-}
-
-// bring up alert
-function flagDecimals(){
-    $('.decimal').fadeIn(100);
-}
-
-// bring up alert
-function flagError(){
-        $('.submit').fadeIn(100);
 }
 
 function deleteEmployee() {
