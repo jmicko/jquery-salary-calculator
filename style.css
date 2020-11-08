@@ -10,7 +10,6 @@ body {
 
 table {
     border: black 2px solid;
-    /* margin: 0; */
     border-collapse: collapse;
 }
 
@@ -107,12 +106,7 @@ input {
     /* color: rgb(209, 202, 192); */
     background-color: rgb(209, 202, 192);
     font-family: inherit;
-    /* appearance: none; */
-    /* -moz-appearance: none; */
-    /* -webkit-appearance: none; */
-    /* border-radius: 0; */
-    /* -moz-border-radius: 0; */
-    /* -webkit-border-radius: 0; */
+
 }
 
 input:focus {
@@ -138,19 +132,3 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px rgb(167, 167, 167) inset !important;
 }
-
-/* input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    -webkit-appearance: unset;
-    -webkit-color: none;
-}
-
-input:[type="text"] { -webkit-appearance: none}; */
-
