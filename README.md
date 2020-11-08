@@ -12,7 +12,7 @@ Filecorp Paycheck Simulator takes data about an employee and adds it to a table 
 
 ## Screen Shots
 
-![salary calculator screenshot](salary-calculator2.png)
+![salary calculator screenshot2](salary-calculator2.png)
 ![salary calculator screenshot](salary-calculator.png)
 
 ## Installation
