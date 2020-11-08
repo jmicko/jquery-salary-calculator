@@ -46,7 +46,7 @@ function submitEmployee(event) {
             <td>${employee.lastName}</td>
             <td>${employee.id}</td>
             <td>${employee.title}</td>
-            <td>$${employee.salary}</td>
+            <td class='employee-salary'>$${employee.salary}</td>
             <td class='delete-cell'><button class='delete-button'>Terminate</button></td>
         </tr>`
         );
@@ -59,5 +59,13 @@ function submitEmployee(event) {
 }
 
 function deleteEmployee() {
+    // find the current row we are in first by looking for the closest tr
+    let currentRow = $(this.closest('tr'));
+    // look inside the row for the salary cell by using .find, and save the content as the salary
+    let salary = $(currentRow).find('.employee-salary').html();
+    // remove the commas and $ from the salary and save just the number value
+    let salaryNum = Number(salary.replace(/\D/g,''));
+    totalMonthly -= salaryNum;
+    $('#monthly-total').text(`Total Monthly: $${totalMonthly}`);
     $(this.closest('tr')).remove();
 }
