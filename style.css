@@ -4,13 +4,20 @@ body {
 }
 
 .container {
-    width: fit-content;
+    max-width: 90vw;
     margin: auto;
 }
+
 
 table {
     border: black 2px solid;
     border-collapse: collapse;
+    box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 thead tr {
@@ -20,20 +27,15 @@ thead tr {
 }
 
 th {
-    border: black 2px solid;
-    border-collapse: collapse;
     padding: 50px auto;
     font-size: 1.2em;
-    width: 16%;
 }
 
 tr {
-    border: black 2px solid;
-    border-collapse: collapse;
     background-color: rgb(238, 238, 195);
 }
 
-td {
+td, tr, th {
     border: black 2px solid;
     border-collapse: collapse;
 }
@@ -97,8 +99,8 @@ button:active {
     float: right;
 }    
 
-table {
-    box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
+form {
+display: flex;
 }
 
 input {
@@ -106,6 +108,8 @@ input {
     /* color: rgb(209, 202, 192); */
     background-color: rgb(209, 202, 192);
     font-family: inherit;
+    width: 100%;
+    margin: 0% .2%;
 
 }
 
