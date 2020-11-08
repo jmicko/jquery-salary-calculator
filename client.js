@@ -58,3 +58,6 @@ function submitEmployee(event) {
     }
 }
 
+function deleteEmployee() {
+    $(this.closest('tr')).remove();
+}
