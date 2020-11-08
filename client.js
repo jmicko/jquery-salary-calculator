@@ -28,17 +28,20 @@ function submitEmployee(event) {
         title: $('#in-title').val(),
         salary: $('#in-annual-salary').val()
     };
-
-    if (fieldsFull(employee) && noDecimals(employee)) {
+    // check to make sure all fields are filled and there are no decimals in the salary field
+    // as it can make for bad calculations in js
+    // used single & here so any error flags will update if they have been fixed
+    if (fieldsFull(employee) & noDecimals(employee)) {
         console.log('there is an employee', employee);
+        // add a row to the table with the new employee information and a delete button
         $('.employee-list').append(
             `<tr>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.id}</td>
-            <td>${employee.title}</td>
-            <td class='employee-salary'>$${employee.salary}</td>
-            <td class='delete-cell'><button class='delete-button'>Terminate</button></td>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.id}</td>
+                <td>${employee.title}</td>
+                <td class='employee-salary'>$${employee.salary}</td>
+                <td class='delete-cell'><button class='delete-button'>Terminate</button></td>
             </tr>`
         );
         // change the salary string to a number so we can just add it to the total /\D/g,'' searches for all non-numbers 
@@ -54,12 +57,14 @@ function submitEmployee(event) {
 function fieldsFull(employee) {
     // loop through employee object
     for (const val in employee) {
-        console.log(`value of the key is:`, employee[val]);
         if (!employee[val]) {
             console.log(`it's false`, employee[val]);
+            flagError();
             return false;
         }
     }
+    $('.submit').fadeOut(100);
+
     return true;
 }
 
@@ -70,11 +75,19 @@ function noDecimals(employee) {
         console.log(`can't do that`);
         return false;
     }
+    $('.decimal').fadeOut(100);
+
     return true;
 }
 
 function flagDecimals(){
-    
+        $('.decimal').fadeIn(100);
+        $('.decimal').show(500);
+}
+
+function flagError(){
+        $('.submit').fadeIn(100);
+        $('.submit').show(500);
 }
 
 function deleteEmployee() {
