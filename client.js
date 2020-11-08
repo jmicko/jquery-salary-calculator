@@ -12,7 +12,7 @@ function readyNow() {
 }
 
 function printTotal() {
-    $('main').append(`<h2 id='monthly-total'>Total Monthly: $${totalAnnual}</h2>`);
+    $('main').append(`<h2 class='shadow monthly-total'>Total Monthly: $${totalAnnual}</h2>`);
 }
 
 
@@ -104,5 +104,11 @@ function deleteEmployee() {
 }
 
 function updateTotal() {
-    $('#monthly-total').text(`Total Monthly: $${Math.round(totalAnnual / 12)}`);
+    console.log(totalAnnual);
+    $('.monthly-total').text(`Total Monthly: $${Math.round(totalAnnual / 12)}`);
+    if (totalAnnual / 12 > 20000) {
+        $('.monthly-total').addClass('red');
+    } else {
+        $('.monthly-total').removeClass('red');
+    }
 }
