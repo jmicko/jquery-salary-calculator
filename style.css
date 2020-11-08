@@ -81,6 +81,10 @@ th {
     font-size: 1.2em;
 }
 
+.employee-salary{
+    text-align: right;
+}
+
 tr {
     background-color: rgb(238, 238, 195);
 }
