@@ -177,3 +177,17 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .shadow{
     box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
 }
+
+.hide {
+    display: none;
+}
+
+#expand{
+    border: black solid 2px;
+    float: right;
+}
+
+h3 {
+    width: 17%;
+    padding: 2px;
+}

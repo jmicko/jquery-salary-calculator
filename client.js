@@ -9,6 +9,13 @@ function readyNow() {
     $('.submit-button').on('click', submitEmployee);
     printTotal()
     $('.employee-list').on('click', '.delete-cell', deleteEmployee);
+    $('main').on('click', '#expand', hideIntro);
+}
+
+function hideIntro(){
+    $('#intro').toggleClass('hide');
+    $('#welcome-dot').toggleClass('hide');
+    $('#welcome').toggleClass('hide');
 }
 
 function printTotal() {
@@ -49,7 +56,12 @@ function submitEmployee(event) {
         let salaryNum = Number(employee.salary.replace(/\D/g, ''));
         totalAnnual += salaryNum;
         updateTotal();
-        console.log(salaryNum, employee.salary);
+        // remove all 
+        $('#in-first-name').val(''),
+        $('#in-last-name').val(''),
+        $('#in-id').val(''),
+        $('#in-title').val(''),
+        $('#in-annual-salary').val('')
     }
 }
 
@@ -85,9 +97,10 @@ function flagDecimals(){
         $('.decimal').show(500);
 }
 
+// 
 function flagError(){
         $('.submit').fadeIn(100);
-        $('.submit').show(500);
+        // $('.submit').show(500);
 }
 
 function deleteEmployee() {
@@ -104,11 +117,14 @@ function deleteEmployee() {
 }
 
 function updateTotal() {
-    console.log(totalAnnual);
+    // change the content of monthly total to be the total anual
+    // salary divided by 12 months
     $('.monthly-total').text(`Total Monthly: $${Math.round(totalAnnual / 12)}`);
+    // if monthly costs are higher than 20k, change background to red 
     if (totalAnnual / 12 > 20000) {
         $('.monthly-total').addClass('red');
     } else {
+        // if 20k or lower, green background can remain
         $('.monthly-total').removeClass('red');
     }
 }
