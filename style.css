@@ -176,7 +176,7 @@ button:active {
 
 /* make a container to hold divs the same width as the inputs above so alert flags show up right */
 .space-container {
-    position: fixed;
+    position: absolute;
     display: flex;
     width: 1144px;
 }
