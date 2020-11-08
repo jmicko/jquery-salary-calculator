@@ -5,26 +5,33 @@ let totalAnnual = 0
 
 
 function readyNow() {
-    console.log('jQuery connected');
+    // listener for submitting data from form
     $('.submit-button').on('click', submitEmployee);
+    // print the monthly total on the page
     printTotal()
+    // add listeners to delete buttons
     $('.employee-list').on('click', '.delete-cell', deleteEmployee);
+    // add listener to expand button
     $('main').on('click', '#expand', hideIntro);
 }
 
+// toggles the buttons to show/hide, as well as the welcome letter
 function hideIntro(){
     $('#intro').toggleClass('hide');
+    // used two different button instead of changing the text on the button every time
     $('#welcome-dot').toggleClass('hide');
     $('#welcome').toggleClass('hide');
 }
 
 function printTotal() {
-    $('main').append(`<h2 class='shadow monthly-total'>Total Monthly: $${totalAnnual}</h2>`);
+    // shows the total at the bottom of the page, which at this point is 0
+    $('main').append(`<h2 class='shadow monthly-total'>Total Monthly: $${totalAnnual/12}</h2>`);
 }
 
 
 // take input from text boxes and add them to the table in the DOM
 function submitEmployee(event) {
+    // don't refresh page on submit
     event.preventDefault();
 
     // grab values from all input boxes and store them in an employee object
@@ -54,9 +61,11 @@ function submitEmployee(event) {
         // change the salary string to a number so we can just add it to the total /\D/g,'' searches for all non-numbers 
         // and replaces them with empty string
         let salaryNum = Number(employee.salary.replace(/\D/g, ''));
+        // add employee anual salary to the anual total 
         totalAnnual += salaryNum;
+        // show new monthly total
         updateTotal();
-        // remove all 
+        // remove all values from input fields
         $('#in-first-name').val(''),
         $('#in-last-name').val(''),
         $('#in-id').val(''),
@@ -80,27 +89,27 @@ function fieldsFull(employee) {
     return true;
 }
 
-
+// check if user has entered a decimal point
 function noDecimals(employee) {
+    // look for postition of period. If none, will return -1
     if (employee.salary.indexOf('.') !== -1) {
+        // pull up flag to alert user of problem
         flagDecimals();
-        console.log(`can't do that`);
         return false;
     }
+    // if no problem, make sure to remove flag
     $('.decimal').fadeOut(100);
-
     return true;
 }
 
+// bring up alert
 function flagDecimals(){
-        $('.decimal').fadeIn(100);
-        $('.decimal').show(500);
+    $('.decimal').fadeIn(100);
 }
 
-// 
+// bring up alert
 function flagError(){
         $('.submit').fadeIn(100);
-        // $('.submit').show(500);
 }
 
 function deleteEmployee() {
@@ -110,9 +119,11 @@ function deleteEmployee() {
     let salary = $(currentRow).find('.employee-salary').html();
     // remove all non-numbers from the salary and save just the number value
     let salaryNum = Number(salary.replace(/\D/g, ''));
-    // subtract anual 
+    // subtract anual salary of that employee fromn the anual total
     totalAnnual -= salaryNum;
+    // display new total
     updateTotal();
+    // remove the table row that the delete button sits in
     $(this.closest('tr')).remove();
 }
 

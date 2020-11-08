@@ -17,30 +17,33 @@
             <h1>FILECORP PAYCHECK SIMULATOR</h1>
         </header>
         <main><div>
-            <h3 id='welcome-dot'>Welcome...  <span id="expand">+MORE+ </span></h3>
-            <h3 id='welcome' class='hide'>Welcome <span id="expand"> -LESS- </span></h3>
+            <!-- two h3s can be toggled with the button to expand the welcome
+            letter, and change the button -->
+            <h3 id='welcome-dot'>Welcome...  <button class="expand-button" id="expand">+MORE+ </button></h3>
+            <h3 id='welcome' class='hide'>Welcome <button class="expand-button" id="expand"> -LESS- </button></h3>
             <div id="intro" class='hide'>
                 <p>
                     Thank you for integrating with Filecorp. <br>
-                    Below you wil find the systems program necessary <br>
+                    Below you will find the systems program necessary <br>
                     for integrating new employee, along with <br>
                     calculation of financial loss taken upon by <br>
                     Filecorp. <br><br>
                     You will find the user interface both pleasant <br>
-                    and simple to use. Enter the required data into <br>
-                    each field and "Integrate" the new employee. Do <br>
+                    and simple to use. Enter all required data into <br>
+                    each field and Integrate the new employee. Do <br>
                     not include cents in the salary. <br><br>
-                    If the total monthly expenditure is above $20,000, <br>
-                    there will be a catastrophy, and an employee must <br>
-                    be terminated. If another employee cannot be <br>
-                    terminated, you will be terminated. <br><br>
-                    Thank you for functioning with Filecorp.
+                    If total monthly expenditure is above $20,000, <br>
+                    there will be catastrophic and an employee must <br>
+                    be terminate. If other employee cannot be <br>
+                    terminate, you will be terminate. <br><br>
+                    Thank you for appreciating with Filecorp.
                 </p>
 
             </div>
             <h2>Add Employee</h2>
         </div>
             <form>
+                <!-- input form takes employee data -->
                 <input type="text" placeholder="First Name" id="in-first-name">
                 <input type="text" placeholder="Last Name" id="in-last-name">
                 <input type="text" placeholder="ID" id="in-id">
@@ -49,12 +52,14 @@
                 <input type="text" placeholder="Annual Salary" id="in-annual-salary">
                 <button type="submit" class="submit-button">Integrate</button>
             </form>
+            <!-- containter to hold divs that adjust spacing for error flags -->
             <div class="space-container">
                 <div class="flag"></div>
                 <div class="flag"></div>
                 <div class="flag"></div>
                 <div class="flag"></div>
                 <div class="flag">
+                    <!-- some of the divs have an error flag that starts out hidden -->
                     <div class="flag decimal alert">please round to<br>nearest dollars</div>
                 </div>
                 <div class="flag-small">
@@ -62,6 +67,7 @@
                 </div>
             </div>
             <h2>Employees</h2>
+            <!-- table to display employee data -->
             <table class="shadow">
                 <thead>
                     <tr>

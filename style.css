@@ -10,88 +10,9 @@ body {
     min-width: 1144px;
 }
 
-table {
-    border: black 2px solid;
-    border-collapse: collapse;
-    margin: auto;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-}
-
-thead tr {
-    border: black 2px solid;
-    border-collapse: collapse;
-    background-color: rgb(98, 127, 128);
-}
-
-th {
-    padding: 50px auto;
-    font-size: 1.2em;
-}
-
-tr {
-    background-color: rgb(238, 238, 195);
-}
-
-td, tr, th {
-    border: black 2px solid;
-    border-collapse: collapse;
-}
-
-tr:nth-child(2n) {
-    background-color: rgb(179, 179, 166);
-}
-
-#delete-header {
-    width: 12%;
-    background-color: rgb(34, 36, 29);
-}
-
-.delete-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-}
-
-.delete-button {
-    background-color: rgb(236, 65, 65);
-    font: inherit;
-    box-shadow: inset 2px 2px rgba(255, 255, 255, .6), inset -2px -2px rgba(0, 0, 0, .6);
-}
-
-.delete-button:hover {
-    background-color: lightcoral;
-}
-
-.submit-button {
-    background-color: rgb(109, 145, 108);
-    font: inherit;
-    box-shadow: inset 2px 2px rgba(255, 255, 255, .6), inset -2px -2px rgba(0, 0, 0, .6);
-}
-
-.submit-button:hover {
-    background-color: rgb(156, 180, 155);
-}
-
-.submit-button:focus {
-    /* remove annoying rounded blue outline when button is focused */
-    outline: none;
-    /* change color when focused to resolve accesibility concerns */
-    background-color: rgba(128, 177, 159, 0.596);
-}
-
-button:active {
-    box-shadow: inset -2px -2px rgba(255, 255, 255, .6), inset 2px 2px rgba(0, 0, 0, .6);
-}
-
-.delete-button:focus {
-    /* remove annoying rounded blue outline when button is focused */
-    outline: none;
-    /* change color when focused to resolve accesibility concerns */
-    background-color: rgba(184, 113, 140, 0.507);
+h3 {
+    width: 17%;
+    padding: 2px;
 }
 
 form {
@@ -123,11 +44,131 @@ input:active {
     /* color: rgb(209, 202, 192); */
 }
 
-/* Change the white to any color ;) */
-
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+/* changes the styling that the browser add after autofilling a box */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px rgb(167, 167, 167) inset !important;
 }
+
+/* add a nice blurry shadow to the table and total */
+.shadow{
+    box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
+}
+
+table {
+    border: black 2px solid;
+    /* remove double line effect */
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    /* stop table from getting too big for page */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+thead tr {
+    border: black 2px solid;
+    /* remove double line effect */
+    border-collapse: collapse;
+    background-color: rgb(98, 127, 128);
+}
+
+th {
+    padding: 50px auto;
+    font-size: 1.2em;
+}
+
+tr {
+    background-color: rgb(238, 238, 195);
+}
+
+/* add a border to everything */
+td, tr, th {
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+
+/* make every other line a different color */
+tr:nth-child(2n) {
+    background-color: rgb(179, 179, 166);
+}
+
+/* sizing and color for blank cell */
+#delete-header {
+    width: 12%;
+    background-color: rgb(34, 36, 29);
+}
+
+/* center the delete button */
+.delete-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+
+
+/* The rest of this is mostly button styling and shows off how bad I am at organizing CSS */
+.delete-button {
+    background-color: rgb(236, 65, 65);
+    font: inherit;
+    box-shadow: inset 2px 2px rgba(255, 255, 255, .6), inset -2px -2px rgba(0, 0, 0, .6);
+}
+
+.delete-button:hover {
+    background-color: lightcoral;
+}
+
+.delete-button:focus {
+    /* remove annoying rounded blue outline when button is focused */
+    outline: none;
+    /* change color when focused to resolve accesibility concerns */
+    background-color: rgba(184, 113, 140, 0.507);
+}
+
+.submit-button {
+    background-color: rgb(109, 145, 108);
+    font: inherit;
+    box-shadow: inset 2px 2px rgba(255, 255, 255, .6), inset -2px -2px rgba(0, 0, 0, .6);
+}
+
+.submit-button:hover {
+    background-color: rgb(156, 180, 155);
+}
+
+.submit-button:focus {
+    /* remove annoying rounded blue outline when button is focused */
+    outline: none;
+    /* change color when focused to resolve accesibility concerns */
+    background-color: rgba(128, 177, 159, 0.596);
+}
+
+.expand-button {
+    background-color: rgb(108, 123, 145);
+    font: inherit;
+    box-shadow: inset 2px 2px rgba(255, 255, 255, .6), inset -2px -2px rgba(0, 0, 0, .6);
+}
+
+.expand-button:hover {
+    background-color: rgb(155, 160, 180);
+}
+
+.expand-button:focus {
+    /* remove annoying rounded blue outline when button is focused */
+    outline: none;
+    /* change color when focused to resolve accesibility concerns */
+    background-color: rgba(119, 115, 179, 0.596);
+}
+
+button:active {
+    box-shadow: inset -2px -2px rgba(255, 255, 255, .6), inset 2px 2px rgba(0, 0, 0, .6);
+}
+
+
 
 /* make a container to hold divs the same width as the inputs above so alert flags show up right */
 .space-container {
@@ -144,7 +185,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     height: 2.5em;
 }
 
-
+/* set the color of flags and make them invisible at load */
 .alert {
     background-color: rgb(180, 70, 51);
     display: none;
@@ -153,7 +194,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 .submit{
-    margin: 0 .2%;
     width: 100%;
     display: none;
 }
@@ -170,24 +210,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 }
 
+/* next two are for toggling */
 .red {
     background-color: rgb(180, 70, 51);
 }
 
-.shadow{
-    box-shadow: rgba(138, 138, 138, 0.616) 4px 6px 5px;
-}
-
 .hide {
     display: none;
-}
-
-#expand{
-    border: black solid 2px;
-    float: right;
-}
-
-h3 {
-    width: 17%;
-    padding: 2px;
 }
